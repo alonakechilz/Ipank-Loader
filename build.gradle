@@ -24,9 +24,9 @@ android {
 
     sourceSets {
         main {
-            // MANTRA SAKTI: Robot bakal nyari file langsung di depan mata
+            // Jalur sakti agar robot langsung nemu file di halaman depan
             manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = ['.'] 
+            java.srcDirs = ['.']
             res.srcDirs = []
         }
     }
