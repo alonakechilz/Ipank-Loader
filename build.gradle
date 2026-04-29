@@ -4,6 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+        // Versi ini paling aman untuk sistem GitHub sekarang
         classpath 'com.android.tools.build:gradle:7.4.2'
     }
 }
@@ -29,10 +30,12 @@ android {
         versionName "1.0"
     }
 
+    // Penunjuk jalan file agar robot tidak nyasar
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
             java.srcDirs = ['.']
+            res.srcDirs = [] // Kita kosongkan dulu agar tidak error resource
         }
     }
 }
