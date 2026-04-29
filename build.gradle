@@ -4,7 +4,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // Versi ini yang paling stabil dan pasti ada di server GitHub
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
@@ -25,6 +24,7 @@ android {
 
     sourceSets {
         main {
+            // Mantra agar robot langsung nemu file di halaman depan
             manifest.srcFile 'AndroidManifest.xml'
             java.srcDirs = ['.']
             res.srcDirs = []
