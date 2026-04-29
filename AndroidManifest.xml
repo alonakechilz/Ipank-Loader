@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://android.com">
-
     <application
         android:label="Ipank Loader"
-        android:allowBackup="true"
-        android:icon="@android:drawable/sym_def_app_icon"
-        android:theme="@android:style/Theme.DeviceDefault">
-
-        <activity
+        android:icon="@android:drawable/sym_def_app_icon">
+        <activity 
             android:name="com.ipank.loader.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHer" />
             </intent-filter>
         </activity>
-
     </application>
-
 </manifest>
