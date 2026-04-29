@@ -1,11 +1,14 @@
+plugins {
+    id 'com.android.application' version '8.2.2' apply false
+}
+
 buildscript {
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        // Versi ini paling aman untuk sistem GitHub sekarang
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
 
@@ -19,23 +22,22 @@ allprojects {
 apply plugin: 'com.android.application'
 
 android {
-    compileSdk 33
     namespace 'com.ipank.loader'
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.ipank.loader"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }
 
-    // Penunjuk jalan file agar robot tidak nyasar
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
             java.srcDirs = ['.']
-            res.srcDirs = [] // Kita kosongkan dulu agar tidak error resource
+            res.srcDirs = []
         }
     }
 }
