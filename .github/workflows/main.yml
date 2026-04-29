@@ -10,12 +10,18 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Rakit APK Paksa
+      - name: Rapikan Folder & Rakit
         run: |
-          # Perintah untuk memaksa versi mesin yang stabil
-          gradle wrapper --gradle-version 7.5
-          chmod +x gradlew
-          ./gradlew assembleDebug --stacktrace
+          # Buat struktur folder standar
+          mkdir -p app/src/main/java/com/ipank/loader
+          mkdir -p app/src/main/res/layout
+          # Pindahkan file ke sarangnya
+          cp MainActivity.java app/src/main/java/com/ipank/loader/ || true
+          cp AndroidManifest.xml app/src/main/ || true
+          # Bikin file tampilan kosong biar gak error
+          echo '<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://android.com" android:layout_width="match_parent" android:layout_height="match_parent" />' > app/src/main/res/layout/activity_main.xml
+          # Rakit!
+          gradle assembleDebug
       - name: Upload Hasil
         uses: actions/upload-artifact@v4
         with:
