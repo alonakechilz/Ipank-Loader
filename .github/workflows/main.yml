@@ -10,21 +10,20 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Rapikan Folder & Rakit
+      - name: Rakit APK Sultan
         run: |
-          # Buat struktur folder standar
+          # Buat folder standar
           mkdir -p app/src/main/java/com/ipank/loader
           mkdir -p app/src/main/res/layout
-          # Pindahkan file ke sarangnya
-          cp MainActivity.java app/src/main/java/com/ipank/loader/ || true
-          cp AndroidManifest.xml app/src/main/ || true
-          # Bikin file tampilan kosong biar gak error
+          # Pindahkan file yang sudah ada di GitHub ke folder rakitan
+          cp MainActivity.java app/src/main/java/com/ipank/loader/
+          cp AndroidManifest.xml app/src/main/
+          # Bikin tampilan kosong saja
           echo '<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://android.com" android:layout_width="match_parent" android:layout_height="match_parent" />' > app/src/main/res/layout/activity_main.xml
-          # Rakit!
+          # GAS RAKIT!
           gradle assembleDebug
-      - name: Upload Hasil
+      - name: Ambil Hasil APK
         uses: actions/upload-artifact@v4
         with:
           name: Ipank-Loader-Sultan
           path: "**/*.apk"
-          
