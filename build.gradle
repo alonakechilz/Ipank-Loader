@@ -24,10 +24,10 @@ android {
 
     sourceSets {
         main {
-            // Jalur sakti agar robot langsung nemu file di folder yang benar
-            manifest.srcFile 'app/src/main/AndroidManifest.xml'
-            java.srcDirs = ['app/src/main/java']
-            res.srcDirs = ['app/src/main/res']
+            // MANTRA SAKTI: Robot bakal nyari file langsung di depan mata
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['.'] 
+            res.srcDirs = []
         }
     }
 }
