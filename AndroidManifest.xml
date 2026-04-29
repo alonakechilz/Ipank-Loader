@@ -3,10 +3,11 @@
 
     <application
         android:label="Ipank Loader"
+        android:allowBackup="true"
         android:icon="@android:drawable/sym_def_app_icon">
 
         <activity
-            android:name="com.ipank.loader.MainActivity"
+            android:name="MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
