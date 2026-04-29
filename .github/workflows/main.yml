@@ -1,0 +1,28 @@
+name: Build APK Ipank
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      - name: Rakit APK
+        run: |
+          # Mantra biar robot nemu folder kamu
+          mkdir -p app/src/main/java/com/ipank/loader
+          mkdir -p app/src/main/res/layout
+          mv MainActivity.java app/src/main/java/com/ipank/loader/
+          mv AndroidManifest.xml app/src/main/
+          # Bikin wajah aplikasi kosong biar gak error
+          echo '<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://android.com" android:layout_width="match_parent" android:layout_height="match_parent" />' > app/src/main/res/layout/activity_main.xml
+          # Mulai Rakit!
+          gradle assembleDebug
+      - name: Upload Hasil
+        uses: actions/upload-artifact@v3
+        with:
+          name: Ipank-Loader-Sultan
+          path: app/build/outputs/apk/debug/app-debug.apk
