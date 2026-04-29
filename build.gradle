@@ -4,18 +4,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+        // Versi ini yang paling stabil dan pasti ada di server GitHub
         classpath 'com.android.tools.build:gradle:8.2.2'
-    }
-}
-
-plugins {
-    id 'com.android.application' version '8.2.2' apply false
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
     }
 }
 
@@ -40,4 +30,9 @@ android {
             res.srcDirs = []
         }
     }
+}
+
+repositories {
+    google()
+    mavenCentral()
 }
