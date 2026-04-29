@@ -24,6 +24,7 @@ android {
 
     sourceSets {
         main {
+            // Mantra agar robot langsung nemu file di folder yang benar
             manifest.srcFile 'app/src/main/AndroidManifest.xml'
             java.srcDirs = ['app/src/main/java']
             res.srcDirs = ['app/src/main/res']
